@@ -33,6 +33,7 @@ class Solution(object):
                     k = k - 1
                 else:
                     j = j + 1
+
         for items in result_set:
             if items in final:
                 pass
