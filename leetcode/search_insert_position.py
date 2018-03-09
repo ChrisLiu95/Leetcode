@@ -12,11 +12,21 @@ def search_insert_position(array, target):
             return i
         if target < array[0]:
             return 0
-        elif target > array[len(array)-1]:
+        elif target > array[len(array) - 1]:
             return len(array)
         else:
             if array[i] < target < array[i + 1]:
                 return i + 1
+
+
+def searchInsert(nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: int
+    """
+
+    return len([x for x in nums if x < target])
 
 
 print(search_insert_position([1, 5, 7, 23], 2))

@@ -19,3 +19,7 @@ class Solution(object):
                 return True
             dic[val] = i
         return False
+
+
+test = Solution()
+print(test.containsNearbyDuplicate([1, 2, 3, 1, 2], 5))

@@ -1,4 +1,5 @@
-# use the minimum steps to reach a number from 0, on i-th move, you can either move i forward or i steps back
+# use the minimum steps to reach a number from 0, on i-th move,
+# you can either move i forward or i steps back
 
 
 def minimum_move(num):

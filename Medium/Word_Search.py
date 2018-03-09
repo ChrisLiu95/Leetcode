@@ -16,6 +16,7 @@ word = "ABCCED", -> returns true,
 word = "SEE", -> returns true,
 word = "ABCB", -> returns false.
 
+
 """
 
 
@@ -31,8 +32,8 @@ class Solution(object):
                     return True
                 else:
                     temp = board[i][j]
-                    board[i][j] = '0'
-                    res = dfs(i - 1, j, k + 1) + dfs(i, j + 1, k + 1) + dfs(i + 1, j, k + 1) + dfs(i, j - 1, k + 1)
+                    board[i][j] = '#'
+                    res = dfs(i - 1, j, k + 1) or dfs(i, j + 1, k + 1) or dfs(i + 1, j, k + 1) or dfs(i, j - 1, k + 1)
                     board[i][j] = temp
                     return res
             return False

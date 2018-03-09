@@ -37,21 +37,18 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        if x <= 0:
+        if not x:
             return 0
-        low, high = 1, x
-        while low <= high:
-            mid = (high + low) / 2
+        left, right = 1, x
+        while left <= right:
+            mid = (left + right) // 2
             if mid * mid == x:
                 return mid
-            elif mid * mid > x:
-                high = int(high - 1)
+            elif mid * mid < x:
+                left = mid + 1
             else:
-                low = int(low + 1)
-        if high * high < x:
-            return int(high)
-        else:
-            return int(low)
+                right = mid - 1
+        return right if right * right < x else left
 
 
 test = Solution()

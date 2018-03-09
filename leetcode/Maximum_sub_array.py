@@ -3,7 +3,7 @@
 
 def maximum_sub_array(given_array):
     max_current = max_global = given_array[0]
-    for i in range(1, len(given_array)-1):
+    for i in range(1, len(given_array)):
         max_current = max(given_array[i], max_current + given_array[i])
         if max_current > max_global:
             max_global = max_current

@@ -23,8 +23,9 @@ class Solution(object):
         for i in s.lower():
             if i.isalnum():
                 ss += i
+        print(ss)
         return ss == ss[::-1]
 
 
 test = Solution()
-print(test.isPalindrome("A man, a plan, a canal:fs Panama"))
+print(test.isPalindrome("A man, a plan, a canal: Panama"))

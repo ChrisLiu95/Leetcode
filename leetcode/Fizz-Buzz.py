@@ -5,21 +5,21 @@
 # both 3 and 5's multiples output FizzBuzz
 
 
-class Solution():
+class Solution(object):
 
     def FizzBuzz(self, n):
 
         return_str = []
 
-        for i in range(n+1):
+        for i in range(n + 1):
             if i % 15 == 0:
                 return_str.append('FizzBuzz')
-            elif i % 5 == 0 :
+            elif i % 5 == 0:
                 return_str.append('Buzz')
-            elif i % 3 == 0 :
+            elif i % 3 == 0:
                 return_str.append('Fizz')
             else:
-                return_str.append(i)
+                return_str.append(str(i))
         return return_str
 
 

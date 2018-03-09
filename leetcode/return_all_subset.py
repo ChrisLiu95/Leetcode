@@ -3,13 +3,12 @@
 from itertools import combinations
 
 
-class solution0():
+class Solution(object):
 
     def subset(self, nums):
-
         result = set()
 
-        for i in range(len(nums)+1):
+        for i in range(len(nums) + 1):
             result |= set(combinations(nums, i))  # 求并集
 
         return result
@@ -44,5 +43,5 @@ class solution1():  # without the python already-have function
         return return_set
 
 
-test = solution1()
+test = Solution()
 print(test.subset([1, 2, 3]))

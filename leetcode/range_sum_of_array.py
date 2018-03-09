@@ -18,9 +18,9 @@ class Solution(object):
     def range_sum(self, i, j):
         length = len(self.nums)
         for index in range(1, length):
-            self.nums[index] += self.nums[index-1]
+            self.nums[index] += self.nums[index - 1]
 
-        return self.nums[j]-self.nums[i-1]
+        return self.nums[j] - (self.nums[i - 1] if i > 0 else 0)
 
 
 test = Solution([1, 2, 3, 4, 5])

@@ -24,19 +24,25 @@ Output: 2
 class Solution(object):
 
     def wiggle(self, nums):
+        if len(nums) <= 1:
+            return len(nums)
+
         diff = []
         res = 1
+
         for i in range(1, len(nums)):
-            x = nums[i] - nums[i-1]
-            if x is not 0:
-                diff.append(x)
+            if nums[i] != nums[i - 1]:
+                diff.append(nums[i] - nums[i - 1])
+
+        if not diff:
+            return 1
+
         for j in range(1, len(diff)):
-            prod = diff[j]*diff[j-1]
-            if prod < 0:
-                res = res + 1
+            if diff[j] * diff[j - 1] < 0:
+                res += 1
+
         return res + 1
 
 
 test = Solution()
 print(test.wiggle([1, 7, 4, 9, 2, 5]))
-

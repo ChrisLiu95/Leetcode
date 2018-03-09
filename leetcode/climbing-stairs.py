@@ -3,27 +3,20 @@
 # find out the numbers of ways to the top
 
 
-class Solution():
+class Solution(object):
 
     def climbStairs(self, n):
+        a = b = 1
+        for _ in range(n):
+            a, b = b, a + b
+        return a
 
-        steps = [0 for _ in range(n+1)]
-
-        for num in (0, 1, 2):
-            steps[num] = num
-
-        for num in range(3, n+1):
-            steps[num] = steps[num-1] + steps[num-2]
-
-        return steps[n]
-
-
-# basic Fibonacci Sequence
+    # basic Fibonacci Sequence
     def Fibonacci_creator(self, n):
         a, b = 0, 1
         sequence = []
-        for i in range(1, n+1):
-            a, b = b, a+b
+        for i in range(1, n + 1):
+            a, b = b, a + b
             sequence.append(a)
         return sequence
 

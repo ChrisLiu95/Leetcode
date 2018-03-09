@@ -9,7 +9,7 @@ def two_sum_n_square(num_list, target):
     for i in range(length):
         for j in range(length):
 
-            value = num_list[i]+num_list[j]
+            value = num_list[i] + num_list[j]
 
             if value == target and i != j:
                 return True
@@ -17,11 +17,10 @@ def two_sum_n_square(num_list, target):
     return False
 
 
-print(two_sum_n_square([1, 2, 3], 2))
+# print(two_sum_n_square([1, 2, 3], 2))
 
 
 def two_sum_n_log_n(num_list, target):
-
     num_list.sort()
     length = len(num_list)
 
@@ -30,7 +29,7 @@ def two_sum_n_log_n(num_list, target):
 
     while left_index < right_index:
 
-        value = num_list[left_index]+num_list[right_index]
+        value = num_list[left_index] + num_list[right_index]
 
         if value == target:
             return True
@@ -42,11 +41,10 @@ def two_sum_n_log_n(num_list, target):
     return False
 
 
-print(two_sum_n_log_n([1, 2, 3], 2))
+# print(two_sum_n_log_n([1, 2, 3], 2))
 
 
 def two_sum_n(num_list, target):
-
     already_seen = set()
 
     for number in num_list:
@@ -60,4 +58,15 @@ def two_sum_n(num_list, target):
     return False
 
 
-print(two_sum_n([1, 2, 3], 4))
+def twoSum(nums, target):
+    dir = {}
+    for index, num in enumerate(nums):
+        value = target - num
+        if value in dir:
+            return [dir[value], index]
+        else:
+            dir[num] = index
+    return False
+
+
+print(twoSum([1, 2, 3], 4))

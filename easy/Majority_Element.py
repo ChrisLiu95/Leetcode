@@ -22,7 +22,7 @@ class Solution(object):
     # NOTICE that the majority element always exist in the array,so that the middle always is the answer
     # much faster!
     def majorityElement2(self, nums):
-        return sorted(nums)[int(len(nums) / 2)]
+        return sorted(nums)[(len(nums) // 2)]
 
 
 
