@@ -16,6 +16,7 @@ O（logn）
 
 
 def binary_search(nums, target):
+    nums.sort()
     if len(nums) == 0:
         return -1
     left, right = 0, len(nums) - 1
@@ -32,7 +33,7 @@ def binary_search(nums, target):
 
 def main():
     nums = [1, 3, 2, 4, 5]
-    print(binary_search(nums, 5))
+    print(binary_search(nums, 1))
 
 
 main()

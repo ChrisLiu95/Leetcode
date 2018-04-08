@@ -20,7 +20,7 @@ class Solution(object):
             return 0
         r, c = len(matrix), len(matrix[0])
         dp = [[1 if matrix[r][c] else 0 for c in range(c)] for r in range(r)]
-        print(dp)
+        # print(dp)
         for i in range(1, r):
             for j in range(1, c):
                 if matrix[i][j]:

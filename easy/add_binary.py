@@ -18,6 +18,7 @@ class Solution(object):
         """
         a = int(a, 2)
         b = int(b, 2)
+        eval("print(2+2)")
         return bin(a + b)[2:]
 
 

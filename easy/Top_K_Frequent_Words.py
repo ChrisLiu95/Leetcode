@@ -21,10 +21,22 @@ import collections
 
 class Solution(object):
     def topKFrequent(self, words, k):
-        count = collections.Counter(words)
-        print(sorted(count.most_common(3), reverse=True))
-        return [x for x, y in count.most_common(k)]
+        # count = collections.Counter(words)
+        # print(count.most_common(3))
+        # return [x for x, y in count.most_common(k)]
+        # !! sorted  lambda 先按照-x【1】排序，一样的话看x[0]
+        mydir = {}
+        for word in words:
+            mydir[word] = mydir.get(word, 0) + 1
+
+        mydir = sorted(list(mydir.items()), key=lambda x: (-x[1], x[0]))
+        res = []
+
+        for i in range(k):
+            res.append(mydir[i][0])
+
+        return res
 
 
 test = Solution()
-print(test.topKFrequent(["i", "love", "leetcode", "i", "love", "coding"], 2))
+print(test.topKFrequent(["aaa", "aa", "a"], 1))

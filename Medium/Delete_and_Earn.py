@@ -26,4 +26,19 @@ Then, delete 3 again to earn 3 points, and 3 again to earn 3 points.
 
 class Solution(object):
     def deleteAndEarn(self, nums):
-        
+
+        # dp(i) is the maximum benefit I can obtain using the first i elements in the sorted keys list.
+        mydir = {}
+
+        for num in nums:
+            mydir[num] = mydir.get(num, 0) + 1
+
+        mykey = list(mydir.keys())
+        mykey.sort()
+        dp = [0] * (len(mykey) + 1)
+
+        for i in range(len(mykey)):
+            dp[i + 1] = max(dp[i],
+                            mykey[i] * mydir[mykey[i]] + dp[i if i == 0 or mykey[i] - mykey[i - 1] > 1 else i - 1])
+
+        return dp[-1]

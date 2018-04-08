@@ -12,6 +12,8 @@ For example, given the following triangle
 The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 从下往上扫，分别两两比较
 
+important
+
 """
 
 

@@ -25,6 +25,5 @@ class Solution(object):
         return sorted(nums)[(len(nums) // 2)]
 
 
-
 test = Solution()
 print(test.majorityElement([1, 1, 1, 1, 1, 1, 2, 2, 2, 4, 5, 6]))

@@ -9,6 +9,7 @@ O(nlogn)
 
 # 实现快排
 def quicksort(nums):
+    # end condition
     if len(nums) <= 1:
         return nums
 
