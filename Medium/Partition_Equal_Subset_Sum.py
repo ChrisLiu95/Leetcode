@@ -24,18 +24,26 @@ Explanation: The array cannot be partitioned into equal sum subsets.
 
 
 class Solution(object):
-    # LTE
+    # LTE, compute all possible solution, slow
     def canPartition(self, nums):
-        nums.sort(reverse=True)
-
-        def helper(start, target):  # Here path is not needed
-            if target < 0:
-                return
-            elif target == 0:
-                return True
-            for i in range(start, len(nums)):
-                if helper(i + 1, target - nums[i]):
+        if sum(nums) % 2 == 1:
+            return False
+        else:
+            res = []
+            self.dfs(nums, 0, [], res)
+            print(res)
+            for item in res:
+                if sum(item) == sum(nums) / 2:
                     return True
             return False
 
-        return False if sum(nums) % 2 else helper(0, sum(nums) / 2)
+    def dfs(self, nums, index, path, res):
+        if sum(path) > sum(nums) / 2:
+            return
+        res.append(path)
+        for i in range(index, len(nums)):
+            self.dfs(nums, i + 1, path + [nums[i]], res)
+
+
+test = Solution()
+test.canPartition([1, 5, 11, 5])

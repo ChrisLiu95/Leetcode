@@ -53,7 +53,6 @@ class Solution(object):
         b = self.dfs(matrix, min, i - 1, j, m, n, cache) + 1
         c = self.dfs(matrix, min, i, j + 1, m, n, cache) + 1
         d = self.dfs(matrix, min, i, j - 1, m, n, cache) + 1
-
         cache[i][j] = max(a, b, c, d)
         return cache[i][j]
 

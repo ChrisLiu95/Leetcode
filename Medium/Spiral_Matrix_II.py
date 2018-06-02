@@ -15,30 +15,38 @@ You should return the following matrix:
 
 class Solution(object):
     def generateMatrix(self, n):
-
+        """
+        :type n: int
+        :rtype: List[List[int]]
+        """
+        if not n:
+            return []
         res = [[0 for _ in range(n)] for _ in range(n)]
-        count, rowNum = 1, n
-        rowIndex1, rowIndex2, colIndex1, colIndex2 = 0, n - 1, n - 1, 0
 
-        while rowNum >= 1:
-            for i in range(colIndex2, colIndex1 + 1):
-                res[rowIndex1][i] = count
-                count += 1
-            rowIndex1 += 1
+        left = 0
+        right = n - 1
+        top = 0
+        down = n - 1
+        num = 1
+        while left <= right and top <= down:
+            for i in range(left, right + 1):
+                res[top][i] = num
+                num += 1
+            top += 1
 
-            for i in range(rowIndex1, rowIndex2 + 1):
-                res[i][colIndex1] = count
-                count += 1
-            colIndex1 -= 1
+            for i in range(top, down + 1):
+                res[i][right] = num
+                num += 1
+            right -= 1
 
-            for i in range(colIndex1, colIndex2 - 1, -1):
-                res[rowIndex2][i] = count
-                count += 1
-            rowIndex2 -= 1
+            for i in range(right, left - 1, -1):
+                res[down][i] = num
+                num += 1
+            down -= 1
 
-            for i in range(rowIndex2, rowIndex1 - 1, -1):
-                res[i][colIndex2] = count
-                count += 1
-            colIndex2 += 1
-            rowNum -= 2
+            for i in range(down, top - 1, -1):
+                res[i][left] = num
+                num += 1
+            left += 1
+
         return res
