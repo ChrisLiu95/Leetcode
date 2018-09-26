@@ -28,7 +28,8 @@ def findPath(root, path, k):
         return True
 
     # Check if k is found in left or right sub-tree
-    if root.left is not None and findPath(root.left, path, k) or root.right is not None and findPath(root.right, path, k):
+    if root.left is not None and findPath(root.left, path, k) or root.right is not None and findPath(root.right, path,
+                                                                                                     k):
         return True
 
     # If not present in subtree rooted with root, remove
@@ -41,7 +42,7 @@ def findPath(root, path, k):
 # Returns LCA if node n1 , n2 are present in the given
 # binary tre otherwise return -1
 def findLCA(root, n1, n2):
-    # To store paths to n1 and n2 fromthe root
+    # To store paths to n1 and n2 from the root
     path1 = []
     path2 = []
 
@@ -74,3 +75,17 @@ print("LCA(4, 6) = %d" % (findLCA(root, 4, 6)))
 print("LCA(3, 4) = %d" % (findLCA(root, 3, 4)))
 print("LCA(2, 4) = %d" % (findLCA(root, 2, 4)))
 
+
+def lowestCommonAncestor(self, root, p, q):
+    if not root:
+        return None
+    if root == p or root == q:
+        return root
+    left = self.lowestCommonAncestor(root.left, p, q)
+    right = self.lowestCommonAncestor(root.right, p, q)
+
+    if left and right:
+        return root
+    if not left and not right:
+        return None
+    return left if left else right

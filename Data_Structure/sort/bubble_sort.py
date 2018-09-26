@@ -5,6 +5,7 @@
 """
 
 
+# O(n^2)
 def bubble_sort(lists):
     # 冒泡排序
     count = len(lists)

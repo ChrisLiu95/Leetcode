@@ -45,3 +45,19 @@ class Solution(object):
             ans.append(level)
         return ans
 
+    # similar BFS, a little bit faster
+    def bfs(self, root):
+        if not root:
+            return []
+        queue = [root]
+        res = []
+        while queue:
+            temp = []
+            for node in queue:
+                res.append(node.val)
+                if node.left:
+                    temp.append(node.left)
+                if node.right:
+                    temp.append(node.right)
+            queue = temp
+        return res
