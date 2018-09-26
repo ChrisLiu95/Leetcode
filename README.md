@@ -1,2 +1,5 @@
 # Leetcode
-Contains the leetcode problems I solved by Python
+Life is short, I use python.
+Contains the leetcode problems solved by Python.
+Practive makes perfect, fight on!
+Won't stop till i get an offer :)
